@@ -1,0 +1,86 @@
+<template>
+  <div class="loginPage">
+    <el-row>
+      <el-col :span="8">
+        <el-input id="name"  v-model="name" placeholder="请输入帐号">
+          <template slot="prepend">帐号</template>
+        </el-input>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="8">
+        <el-input id="password" v-model="password" type="password" placeholder="请输入密码">
+          <template slot="prepend">密码</template>
+        </el-input>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="8">
+        <el-button id="registered" v-on:click="registered()" style="width:50%" type="primary">注册</el-button>
+        <el-button id="login" v-on:click="checkLogin()" style="width:50%" type="primary">登录</el-button>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+    //import ElButton from "element-ui/packages/button/src/button";
+    export default {
+      name: "loginPage",
+      props:[],
+      components:{},
+      created(){
+
+      },
+      mounted(){
+
+      },
+      data(){
+        return{
+          name:"",
+          password:"",
+        }
+      },
+      methods:{
+        //登录
+        checkLogin(){
+          var user = {
+            name:this.name,
+            password:this.password
+          };
+          this.$post("/user/login",user,{timeout: 1000 * 60 * 2}).then(data =>{
+
+          }).catch(e => { // 这里必须加入catch不然控制台 error message 显示为红色错误提示
+            console.log(e)
+          });
+        },
+
+        //注册账号
+        registered(){
+          this.$router.push({path:"/registeredPage",query:{dataValue:"传个值试试！！！"}});
+        }
+      },
+      watch:{
+
+      },
+      filter:{
+
+      }
+    }
+</script>
+
+<style lang="scss" scoped>
+  .el-row {
+    margin-bottom: 20px;
+    text-align: center;
+  &:last-child {
+     margin-bottom: 0;
+
+   }
+  }
+  .login-box {
+    margin-top:20%;
+    margin-left:40%;
+  }
+
+</style>

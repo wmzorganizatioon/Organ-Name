@@ -1,0 +1,15 @@
+server:
+  port: 8091
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://192.168.44.1:3306/springboot?useUnicode=true&characterEncoding=utf8
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver        #以前的com.mysql.jdbc.Driver不维护了，这个是最新的（功能：只是为了让后台窗口更加干净）
+    dbcp2:
+      max-idle: 10
+      max-wait-millis: 10000
+      min-idle: 5
+      initial-size: 5
+mybatis:
+  mapper-locations: classpath:mybatis/*/*.xml        #配置mybatis的.xml文件路径
