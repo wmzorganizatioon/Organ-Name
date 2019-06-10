@@ -9,7 +9,7 @@ let baseUrl;
 if(process.env.NODE_ENV === 'development'){
   baseUrl = process.env.API_HOST;              //proxyTable会把base + '/api/c/xx'代理到【base baseUrl + '/api/c/xx'】的接口地址上。  这里的base是你的本地地址如：localhost:8080   这里的baseurl就是要代理的一串地址
 }else if(process.env.NODE_ENV === 'production'){
-  baseUrl = process.env.API_HOST;            //此处在未实现，后期打包实现此功能
+  baseUrl = process.env.API_HOST;            //此处在未实现，后期打包实现此功能(另一种可通过nginx代理)
 }else if(process.env.NODE_ENV === 'test'){
   baseUrl = "http://192.168.44.1:8092/";          // 测试环境，基本不会用到，知道有就行了
 }

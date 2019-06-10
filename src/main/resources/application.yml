@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     username: root
-    url: jdbc:mysql://192.168.44.1:3306/springboot?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver        #以前的com.mysql.jdbc.Driver不维护了，这个是最新的（功能：只是为了让后台窗口更加干净）
     dbcp2:
