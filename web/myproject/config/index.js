@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {  //代理地址
-        target: 'http://192.168.1.112:8091/',  //需要代理的地址
+        target: 'http://169.254.236.198:8091/',  //需要代理的地址
         changeOrigin: true,  //是否跨域
         secure: false,
         pathRewrite: {
@@ -21,7 +21,7 @@ module.exports = {
       },
       //用于生产环境代理
       '/proApi': {  //代理地址
-        target: 'http://192.168.1.112:8091/',  //需要代理的地址
+        target: 'http://169.254.236.198:8091/',  //需要代理的地址
         changeOrigin: true,  //是否跨域
         secure: false,
         pathRewrite: {
