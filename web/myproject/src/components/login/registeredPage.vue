@@ -23,10 +23,13 @@
 </template>
 
 <script>
+  import publicMethods from '@/components/common/publicMethod'
     export default {
       name: "registeredPage",
       props:[],
-      components:{},
+      components:{
+        publicMethods
+      },
       created:function () {
         var data = this.$route.query.dataValue;   //路由请求接收值；
         console.log(data);
@@ -42,6 +45,11 @@
       },
       methods:{
         sure(){
+          debugger
+          if(!this.publicMethods.isDataNull(this.name) || ! this.publicMethods.isDataNull(this.password)){
+            this.$message('用户名和密码不存在！');
+            return;
+          }
           var user = {
             name:this.name,
             password:this.password
@@ -66,6 +74,20 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .loginPage{
+    padding: .1rem;
+  }
+  .el-row {
+    margin-bottom: 20px;
+    margin-left: 35rem;
+    &:last-child {
+      margin-bottom: 0;
 
+    }
+  }
+  .login-box {
+    margin-top:20%;
+    margin-left:40%;
+  }
 </style>

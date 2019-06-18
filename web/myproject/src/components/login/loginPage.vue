@@ -16,8 +16,9 @@
     </el-row>
     <el-row>
       <el-col :span="8">
-        <el-button id="registered" v-on:click="registered()" style="width:50%" type="primary">注册</el-button>
-        <el-button id="login" v-on:click="checkLogin()" style="width:50%" type="primary">登录</el-button>
+        <el-button id="registered" v-on:click="registered()" style="float: left" type="primary">注册</el-button>
+        <el-button id="forGetPassword" v-on:click="registered()" style="" type="primary">忘记密码</el-button>
+        <el-button id="login" v-on:click="checkLogin()" style="float: right" type="primary">登录</el-button>
       </el-col>
     </el-row>
   </div>
@@ -71,9 +72,12 @@
 </script>
 
 <style lang="scss" scoped>
+  .loginPage{
+    padding: .1rem;
+  }
   .el-row {
     margin-bottom: 20px;
-    text-align: center;
+    margin-left: 35rem;
   &:last-child {
      margin-bottom: 0;
 
