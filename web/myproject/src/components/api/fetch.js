@@ -42,7 +42,7 @@ request.interceptors.request.use(
 //axios响应拦截
 request.interceptors.response.use(
   response =>{
-    if(response.data.status === "200"){   //此处只放行200的其他一律拦截报错
+    if(response.status === 200){   //此处只放行200的其他一律拦截报错
       return response
     }else {
       Vue.$vux.toast.show({
@@ -54,6 +54,7 @@ request.interceptors.response.use(
     }
   },
   error => { // 请求失败时的提示
+    debugger
     //console.log(error.response.status);
     return Promise.reject(error)
   }

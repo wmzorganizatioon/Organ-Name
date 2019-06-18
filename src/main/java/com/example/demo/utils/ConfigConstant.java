@@ -14,5 +14,7 @@ public final class ConfigConstant {
 
     public static final String DATA_FAIL_PRESENCE = "2222";   //数据不存在存在
 
-    public static final String DATA_FAIL_NULL_PRESENCE = "3333";   //数据不存在存在
+    public static final String DATA_FAIL_NULL_PRESENCE = "3333";   //数据重复
+
+    public static final String DATA_FAIL_EXPENCTION = "4444";      //异常
 }

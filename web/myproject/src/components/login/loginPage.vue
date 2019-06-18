@@ -48,9 +48,10 @@
             name:this.name,
             password:this.password
           };
+
           this.$post("/user/login",user,{timeout: 1000 * 60 * 2}).then(data =>{
 
-          }).catch(e => { // 这里必须加入catch不然控制台 error message 显示为红色错误提示
+          }).catch(e => {
             console.log(e)
           });
         },

@@ -36,11 +36,24 @@
       },
       data(){
         return{
-
+          name:"",
+          password:""
         }
       },
       methods:{
         sure(){
+          var user = {
+            name:this.name,
+            password:this.password
+          };
+          this.$post("/user/registered",user,{timeout: 1000 * 60 * 2}).then(data =>{
+            if(data.success)
+              this.$router.push({path:"/"});
+
+          }).catch(e => {
+            debugger;
+            console.log(e)
+          });
 
         }
       },

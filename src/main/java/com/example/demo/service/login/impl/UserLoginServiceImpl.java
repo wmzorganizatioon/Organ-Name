@@ -16,4 +16,9 @@ public class UserLoginServiceImpl implements UserLoginService {
     public Integer SelectByUserNameCount(User user) {
         return userLoginRepository.queryByUserNameCount(user);
     }
+
+    @Override
+    public Integer insertUser(User user) {
+        return userLoginRepository.addUser(user);
+    }
 }

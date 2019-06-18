@@ -17,4 +17,7 @@ public class WebUrlMappingConst {
 
     //登录
     public static final String URL_USER_LOGIN = URL_USER + "login";
+
+    //注册
+    public static final String URL_USER_REGISTERED = URL_USER + "registered";
 }

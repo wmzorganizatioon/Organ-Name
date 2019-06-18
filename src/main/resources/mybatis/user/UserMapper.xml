@@ -9,4 +9,9 @@
         WHERE u.name = #{name} AND u.password = #{password}
     </select>
 
+    <insert id="addUser" parameterType="com.example.demo.dao.login.UserLoginRepository">
+        insert into sys_user(name,password)
+        values (#{name},#{password})
+    </insert>
+
 </mapper>
