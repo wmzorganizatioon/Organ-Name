@@ -44,12 +44,11 @@
         }
       },
       methods:{
-        sure(){
-          debugger
+        sure(){/*
           if(!this.publicMethods.isDataNull(this.name) || ! this.publicMethods.isDataNull(this.password)){
             this.$message('用户名和密码不存在！');
             return;
-          }
+          }*/
           var user = {
             name:this.name,
             password:this.password
@@ -59,7 +58,6 @@
               this.$router.push({path:"/"});
 
           }).catch(e => {
-            debugger;
             console.log(e)
           });
 

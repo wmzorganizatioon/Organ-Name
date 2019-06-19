@@ -14,7 +14,11 @@ export default new Router({
     },{
       path: '/registeredPage',
       name: 'registeredPage',
-      component: () => import('@/components/login/registeredPage'),
+      component: () => import('@/components/login/registeredPage')
+    },{
+      path:"forGetPassword",
+      name:"forGetPassword",
+      component:() => import('@/components/login/forGetPassword')
     }
   ]
 })

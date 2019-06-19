@@ -17,7 +17,7 @@
     <el-row>
       <el-col :span="8">
         <el-button id="registered" v-on:click="registered()" style="float: left" type="primary">注册</el-button>
-        <el-button id="forGetPassword" v-on:click="registered()" style="" type="primary">忘记密码</el-button>
+        <el-button id="forGetPassword" v-on:click="forGetPassword()" style="" type="primary">忘记密码</el-button>
         <el-button id="login" v-on:click="checkLogin()" style="float: right" type="primary">登录</el-button>
       </el-col>
     </el-row>
@@ -60,6 +60,10 @@
         //注册账号
         registered(){
           this.$router.push({path:"/registeredPage",query:{dataValue:"传个值试试！！！"}});
+        },
+        //忘记密码
+        forGetPassword(){
+          this.$router.push({path:"/forGetPassword"});
         }
       },
       watch:{
