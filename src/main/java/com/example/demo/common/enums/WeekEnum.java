@@ -1,4 +1,7 @@
-package com.example.demo.common;
+package com.example.demo.common.enums;
+
+import com.example.demo.common.annotation.BooleanAnnotation;
+
 /**
  *@Author 86151
  *@date 2019/6/19 14:09
@@ -15,7 +18,8 @@ public enum WeekEnum {
 
     private String content;
 
-    private boolean isRest = false;
+    @BooleanAnnotation()
+    private boolean isRest;
 
     WeekEnum(String value, String content, boolean isRest) {
         this.value = value;
