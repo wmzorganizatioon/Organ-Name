@@ -6,10 +6,10 @@ package com.example.demo.common;
  *return
  */
 public enum WeekEnum {
-    SSUCCESSENUM("0000","数据正确",true),  //成功
+    SSUCCESSENUM("0000","数据正确",true),  //成功    -----------所以接口成功都是这个code
     NOTEXISTENUM("2222","账号不存在;接口名称:"),  //不存在
     REPEATENUM("3333","账户重复;接口名称:"),      //重复
-    EXCPETIONENUM("4444","接口异常;接口名称:");      //异常
+    EXCPETIONENUM("9999","接口异常;接口名称:");      //异常
 
     private String value;
 

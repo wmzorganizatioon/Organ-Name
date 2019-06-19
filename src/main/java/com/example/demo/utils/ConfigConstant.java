@@ -17,5 +17,5 @@ public final class ConfigConstant {
 
     public static final String DATA_FAIL_NULL_PRESENCE = "3333";   //数据重复
 
-    public static final String DATA_FAIL_EXPENCTION = "4444";      //异常
+    public static final String DATA_FAIL_EXPENCTION = "9999";      //异常
 }

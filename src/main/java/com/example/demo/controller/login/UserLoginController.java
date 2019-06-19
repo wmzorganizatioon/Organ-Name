@@ -79,7 +79,7 @@ public class UserLoginController {
                 jsonResponseValue.setSuccess(false);
             }
         }catch (Exception e){
-            jsonResponseValue.setCode(DATA_FAIL_EXPENCTION);
+            jsonResponseValue.setCode(WeekEnum.EXCPETIONENUM.getValue());
             jsonResponseValue.setReason(WeekEnum.EXCPETIONENUM.getContent() + "URL_USER_REGISTERED");
             jsonResponseValue.setSuccess(WeekEnum.EXCPETIONENUM.isRest());
         }
