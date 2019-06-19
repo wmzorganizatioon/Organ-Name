@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *@Date 2019/5/11 0011
  *@return
  **/
+@Deprecated         //弃用
 @Configuration
 public class MyWebMvcConfig implements WebMvcConfigurer {
 

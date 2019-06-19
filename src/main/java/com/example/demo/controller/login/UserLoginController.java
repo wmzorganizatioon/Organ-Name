@@ -1,5 +1,6 @@
 package com.example.demo.controller.login;
 
+import com.example.demo.common.WeekEnum;
 import com.example.demo.entity.user.User;
 import com.example.demo.service.login.UserLoginService;
 import com.example.demo.utils.JsonResponseValue;
@@ -27,8 +28,9 @@ public class UserLoginController {
         JsonResponseValue jsonResponseValue = new JsonResponseValue();
         if(user != null){
             if(userLoginService.SelectByUserNameCount(user) != 0){
-                jsonResponseValue.setCode(DATA_SUCCESS_PRESENCE);
-                jsonResponseValue.setReason("数据正确");
+                jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
+                jsonResponseValue.setReason(WeekEnum.SSUCCESSENUM.getContent());
+                jsonResponseValue.setSuccess(WeekEnum.SSUCCESSENUM.isRest());
             }else {
                 jsonResponseValue.setCode(DATA_FAIL_PRESENCE);
                 jsonResponseValue.setReason("账号不存在，请先注册！！！");
@@ -67,7 +69,7 @@ public class UserLoginController {
                         jsonResponseValue.setSuccess(false);
                     }
                 }else {
-                    jsonResponseValue.setReason("用户已存在!" + ";接口名称：URL_USER_REGISTERED");
+                    jsonResponseValue.setReason(WeekEnum.REPEATENUM.getContent() + "URL_USER_REGISTERED");
                     jsonResponseValue.setCode(DATA_FAIL_NULL_PRESENCE);
                     jsonResponseValue.setSuccess(false);
                 }
@@ -78,8 +80,8 @@ public class UserLoginController {
             }
         }catch (Exception e){
             jsonResponseValue.setCode(DATA_FAIL_EXPENCTION);
-            jsonResponseValue.setReason("注册接口异常;接口名称：" + "URL_USER_REGISTERED");
-            jsonResponseValue.setSuccess(false);
+            jsonResponseValue.setReason(WeekEnum.EXCPETIONENUM.getContent() + "URL_USER_REGISTERED");
+            jsonResponseValue.setSuccess(WeekEnum.EXCPETIONENUM.isRest());
         }
 
         return jsonResponseValue;

@@ -5,6 +5,7 @@ package com.example.demo.utils;
  *
  * effect:状态区域
  * **/
+@Deprecated
 public final class ConfigConstant {
     public ConfigConstant(){
 
