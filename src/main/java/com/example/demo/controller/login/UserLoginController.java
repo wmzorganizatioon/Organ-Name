@@ -1,5 +1,7 @@
 package com.example.demo.controller.login;
 
+import com.example.demo.common.annotation.BooleanAnnotation;
+import com.example.demo.common.annotation.PostAnnotation;
 import com.example.demo.common.enums.WeekEnum;
 import com.example.demo.entity.user.User;
 import com.example.demo.service.login.UserLoginService;
@@ -22,7 +24,7 @@ public class UserLoginController {
     /**
      * 登录
      * **/
-    @PostMapping(value = URL_USER_LOGIN)
+    @PostAnnotation(value = URL_USER_LOGIN)
     public JsonResponseValue userLogin(@RequestBody User user){
         JsonResponseValue jsonResponseValue = new JsonResponseValue();
         if(user != null){
