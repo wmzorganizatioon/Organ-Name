@@ -6,6 +6,8 @@ import com.example.demo.common.enums.WeekEnum;
 import com.example.demo.entity.user.User;
 import com.example.demo.service.login.UserLoginService;
 import com.example.demo.utils.JsonResponseValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,14 +23,19 @@ public class UserLoginController {
     @Autowired
     private UserLoginService userLoginService;
 
+    //logback
+    static final Logger logger = LoggerFactory.getLogger(UserLoginController.class);
+
     /**
      * 登录
      * **/
-    @PostAnnotation(value = URL_USER_LOGIN)
+    @PostMapping(value = URL_USER_LOGIN)
     public JsonResponseValue userLogin(@RequestBody User user){
+        logger.info("进入登陆方法了！");
         JsonResponseValue jsonResponseValue = new JsonResponseValue();
         if(user != null){
             if(userLoginService.SelectByUserNameCount(user) != 0){
+                logger.info("进入登陆成功了！");
                 jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
                 jsonResponseValue.setReason(WeekEnum.SSUCCESSENUM.getContent());
                 jsonResponseValue.setSuccess(WeekEnum.SSUCCESSENUM.isRest());
@@ -67,12 +74,12 @@ public class UserLoginController {
                     }else {
                         jsonResponseValue.setReason("注册失败！" + ";接口名称：URL_USER_REGISTERED");
                         jsonResponseValue.setCode(DATA_FAIL_PRESENCE);
-                        jsonResponseValue.setSuccess(false);
+                        jsonResponseValue.setSuccess(WeekEnum.NOTEXISTENUM.isRest());
                     }
                 }else {
                     jsonResponseValue.setReason(WeekEnum.REPEATENUM.getContent() + "URL_USER_REGISTERED");
                     jsonResponseValue.setCode(DATA_FAIL_NULL_PRESENCE);
-                    jsonResponseValue.setSuccess(false);
+                    jsonResponseValue.setSuccess(WeekEnum.REPEATENUM.isRest());
                 }
             }else {
                 jsonResponseValue.setReason("传过来的值为null" + ";接口名称：URL_USER_REGISTERED");
@@ -86,5 +93,18 @@ public class UserLoginController {
         }
 
         return jsonResponseValue;
+    }
+
+    /**
+     *
+     *@Author 86151
+     *@Date 2019/6/20 15:20
+     *Description 忘记密码
+     @Param user
+     *return
+     */
+    @PostMapping()
+    public JsonResponseValue forGetPassword(User user){
+        return null;
     }
 }
