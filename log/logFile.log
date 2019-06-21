@@ -1,0 +1,14 @@
+15:38:29.968 [restartedMain] INFO  com.example.demo.DemosApplication:50- Starting DemosApplication on DESKTOP-Q6OCO04 with PID 11740 (F:\devProject\private_project\Organ-Name\target\classes started by 86151 in F:\devProject\private_project\Organ-Name)
+15:38:29.969 [restartedMain] DEBUG com.example.demo.DemosApplication:53- Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+15:38:29.969 [restartedMain] INFO  com.example.demo.DemosApplication:675- No active profile set, falling back to default profiles: default
+15:38:31.247 [restartedMain] DEBUG com.zaxxer.hikari.HikariConfig:480- Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1348f299
+15:38:31.784 [restartedMain] INFO  com.example.demo.DemosApplication:59- Started DemosApplication in 2.242 seconds (JVM running for 3.585)
+15:42:53.766 [restartedMain] INFO  com.example.demo.DemosApplication:50- Starting DemosApplication on DESKTOP-Q6OCO04 with PID 364 (F:\devProject\private_project\Organ-Name\target\classes started by 86151 in F:\devProject\private_project\Organ-Name)
+15:42:53.769 [restartedMain] INFO  com.example.demo.DemosApplication:675- No active profile set, falling back to default profiles: default
+15:42:55.417 [restartedMain] INFO  com.example.demo.DemosApplication:59- Started DemosApplication in 2.059 seconds (JVM running for 3.324)
+15:43:47.612 [http-nio-8091-exec-1] INFO  c.e.d.c.login.UserLoginController:34- 进入登陆方法了！
+15:43:47.625 [http-nio-8091-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:110- HikariPool-1 - Starting...
+15:43:47.720 [http-nio-8091-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:123- HikariPool-1 - Start completed.
+15:43:47.762 [http-nio-8091-exec-1] INFO  c.e.d.c.login.UserLoginController:38- 进入登陆成功了！
+15:45:01.687 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource:350- HikariPool-1 - Shutdown initiated...
+15:45:01.691 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource:352- HikariPool-1 - Shutdown completed.
