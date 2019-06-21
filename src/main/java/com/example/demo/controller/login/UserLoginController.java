@@ -46,7 +46,7 @@ public class UserLoginController {
         }else {
             jsonResponseValue.setCode(DATA_FAIL_NULL_PRESENCE);
             jsonResponseValue.setReason("账号密码不能为空！！！");
-            jsonResponseValue.setSuccess(false);
+            jsonResponseValue.setSuccess(false); 
         }
 
         return jsonResponseValue;
