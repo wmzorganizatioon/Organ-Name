@@ -20,4 +20,7 @@ public class WebUrlMappingConst {
 
     //注册
     public static final String URL_USER_REGISTERED = URL_USER + "registered";
+
+    //忘记密码
+    public static final String URL_USER_FORGETPASSWORD = URL_USER + "forgetpassword";
 }

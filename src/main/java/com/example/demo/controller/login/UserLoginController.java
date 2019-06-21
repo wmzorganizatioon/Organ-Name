@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import static com.example.demo.utils.ConfigConstant.*;
-import static com.example.demo.utils.WebUrlMappingConst.URL_USER_LOGIN;
-import static com.example.demo.utils.WebUrlMappingConst.URL_USER_REGISTERED;
+import static com.example.demo.utils.WebUrlMappingConst.*;
 
 @RestController
 public class UserLoginController {
@@ -29,7 +28,7 @@ public class UserLoginController {
     /**
      * 登录
      * **/
-    @PostMapping(value = URL_USER_LOGIN)
+    @PostAnnotation(value = URL_USER_LOGIN)
     public JsonResponseValue userLogin(@RequestBody User user){
         logger.info("进入登陆方法了！");
         JsonResponseValue jsonResponseValue = new JsonResponseValue();
@@ -103,7 +102,7 @@ public class UserLoginController {
      @Param user
      *return
      */
-    @PostMapping()
+    @PostMapping(value = URL_USER_FORGETPASSWORD)
     public JsonResponseValue forGetPassword(User user){
         return null;
     }

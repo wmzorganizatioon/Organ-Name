@@ -18,4 +18,4 @@ logging:
   config: classpath:logback-springs.xml
   level:
     # root日志以WARN级别输出
-    root: debug
+    root: debug                              #          trace<debug<info<warn<error      【级别越高日志打印越少】
