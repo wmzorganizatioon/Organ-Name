@@ -23,4 +23,7 @@ public class WebUrlMappingConst {
 
     //忘记密码
     public static final String URL_USER_FORGETPASSWORD = URL_USER + "forgetpassword";
+
+    //获取验证码
+    public static final String URL_USER_GET_CODE = URL_USER + "getCode";
 }

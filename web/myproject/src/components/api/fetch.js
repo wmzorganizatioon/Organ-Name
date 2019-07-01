@@ -54,7 +54,6 @@ request.interceptors.response.use(
     }
   },
   error => { // 请求失败时的提示
-    debugger
     //console.log(error.response.status);
     return Promise.reject(error)
   }

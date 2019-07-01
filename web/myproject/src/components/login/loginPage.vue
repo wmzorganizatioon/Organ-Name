@@ -21,6 +21,7 @@
         <el-button id="login" v-on:click="checkLogin()" style="float: right" type="primary">登录</el-button>
       </el-col>
     </el-row>
+    <img src="/api/user/getCode" />
   </div>
 </template>
 
@@ -31,7 +32,6 @@
       props:[],
       components:{},
       created(){
-
       },
       mounted(){
 
@@ -40,6 +40,7 @@
         return{
           name:"",
           password:"",
+          getCode:""
         }
       },
       methods:{
