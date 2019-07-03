@@ -12,5 +12,6 @@
     <!--查询所有的菜单-->
     <select id="getQueryAllMeun" resultMap="MeunList" >
         SELECT * FROM sys_meun
+        where meun_status = 1
     </select>
 </mapper>

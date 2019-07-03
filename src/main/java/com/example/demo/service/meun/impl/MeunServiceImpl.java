@@ -41,7 +41,7 @@ public class MeunServiceImpl implements MeunService {
                 }
             }
 
-            for (Meun m : menuList){     //④将所有的自己菜单在循环出来
+            for (Meun m : menuList){     //④将所有的子级菜单在循环出来
                m.setChildMeuns(getChildMeuns(m.getMeunId(),rootMeuns));
             }
 
@@ -54,7 +54,7 @@ public class MeunServiceImpl implements MeunService {
     /**
      *@Author 86151
      *@Date 2019/7/3 16:34
-     *Description 将自己菜单存放于此
+     *Description 将子级菜单存储于此方法
      @Param
      *return
      */
