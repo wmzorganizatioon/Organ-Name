@@ -15,13 +15,19 @@
       </el-col>
     </el-row>
     <el-row>
+      <el-col :span="8" label="验证码:">
+        <!--验证码图解-->
+        <img src="/api/user/getCode" />
+        <template slot="prepend">验证码:</template>
+      </el-col>
+    </el-row>
+    <el-row>
       <el-col :span="8">
         <el-button id="registered" v-on:click="registered()" style="float: left" type="primary">注册</el-button>
         <el-button id="forGetPassword" v-on:click="forGetPassword()" style="" type="primary">忘记密码</el-button>
         <el-button id="login" v-on:click="checkLogin()" style="float: right" type="primary">登录</el-button>
       </el-col>
     </el-row>
-    <img src="/api/user/getCode" />
   </div>
 </template>
 

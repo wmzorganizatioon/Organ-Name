@@ -11,6 +11,18 @@ spring:
       max-wait-millis: 10000
       min-idle: 5
       initial-size: 5
+  mail:
+    host: smtp.163.com #邮箱服务器地址
+    username: Wmz19960224@163.com #用户名
+    password: 84471386zhi #开启POP3之后设置的客户端授权码
+    default-encoding: UTF-8
+    # 超时时间（可选）
+    properties:
+      mail:
+        smtp:
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
 mybatis:
   mapper-locations: classpath:mybatis/*/*.xml        #配置mybatis的.xml文件路径o
 logging:
