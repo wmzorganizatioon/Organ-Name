@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.meun.MeunDao">
-    <resultMap id="MeunList" type="com.example.demo.entity.meun.meun">
+<mapper namespace="com.example.demo.dao.meun.MeunReposity">
+    <resultMap id="MeunList" type="com.example.demo.entity.meun.Meun">
         <id column="MEUN_ID" property="meunId" />
         <result column="MEUN_NAME" property="meunName" jdbcType="VARCHAR" />
-        <result column="PARENT_ID" property="meunId" jdbcType="VARCHAR" />
+        <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
         <result column="URL" property="url" jdbcType="VARCHAR" />
         <result column="TYPE" property="type" />
     </resultMap>
 
     <!--查询所有的菜单-->
-    <select id="getListMeun" resultMap="MeunList" >
+    <select id="getQueryAllMeun" resultMap="MeunList" >
         SELECT * FROM sys_meun
     </select>
 </mapper>

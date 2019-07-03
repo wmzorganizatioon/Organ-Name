@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.meun.meun;
+import com.example.demo.entity.meun.Meun;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.ui.ModelMap;
@@ -23,16 +23,16 @@ public class JdbcController {
     private JdbcTemplate jdbcTemplate;
 
     @GetMapping("/jdbc")
-    public List<meun> getListMeun(ModelMap map){
+    public List<Meun> getListMeun(ModelMap map){
 
         String sql  = "SELECT * FROM sys_meun";
 
-        List<meun> meuns = jdbcTemplate.query(sql, new RowMapper<meun>() {
-            meun meun;
+        List<Meun> meuns = jdbcTemplate.query(sql, new RowMapper<Meun>() {
+            Meun meun;
 
             @Override
-            public meun mapRow(ResultSet resultSet, int i) throws SQLException {
-                meun = new meun();
+            public Meun mapRow(ResultSet resultSet, int i) throws SQLException {
+                meun = new Meun();
                 meun.setMeunId(resultSet.getLong("meun_id"));
                 meun.setMeunName(resultSet.getString("meun_name"));
                 meun.setUrl(resultSet.getString("url"));

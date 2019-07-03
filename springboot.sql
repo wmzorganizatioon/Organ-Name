@@ -32,15 +32,15 @@ CREATE TABLE `sys_meun` (
 -- ----------------------------
 -- Records of sys_meun
 -- ----------------------------
-INSERT INTO `sys_meun` VALUES ('1', null, 'sys/meun/cost', null, '成本管理', '1');
-INSERT INTO `sys_meun` VALUES ('2', null, 'sys/meun/project', null, '项目管理', '1');
-INSERT INTO `sys_meun` VALUES ('3', null, 'sys/meun/review', null, '审核管理', '1');
-INSERT INTO `sys_meun` VALUES ('4', null, 'sys/meun/comprehensive', null, '综合管理', '1');
-INSERT INTO `sys_meun` VALUES ('5', '1', 'sys/meun/cost/cost', null, '成本预算', '1');
-INSERT INTO `sys_meun` VALUES ('6', '2', 'sys/meun/project/project', null, '项目监护', '1');
-INSERT INTO `sys_meun` VALUES ('7', '2', 'sys/meun/project/customer', null, '产品线', '1');
-INSERT INTO `sys_meun` VALUES ('8', '2', 'sys/meun/project/reimburse', null, '报销监护', '1');
-INSERT INTO `sys_meun` VALUES ('9', '3', 'sys/meun/comprehensive/require', null, '需求维护', '1');
+INSERT INTO `sys_meun` VALUES ('1', null, 'sys/Meun/cost', null, '成本管理', '1');
+INSERT INTO `sys_meun` VALUES ('2', null, 'sys/Meun/project', null, '项目管理', '1');
+INSERT INTO `sys_meun` VALUES ('3', null, 'sys/Meun/review', null, '审核管理', '1');
+INSERT INTO `sys_meun` VALUES ('4', null, 'sys/Meun/comprehensive', null, '综合管理', '1');
+INSERT INTO `sys_meun` VALUES ('5', '1', 'sys/Meun/cost/cost', null, '成本预算', '1');
+INSERT INTO `sys_meun` VALUES ('6', '2', 'sys/Meun/project/project', null, '项目监护', '1');
+INSERT INTO `sys_meun` VALUES ('7', '2', 'sys/Meun/project/customer', null, '产品线', '1');
+INSERT INTO `sys_meun` VALUES ('8', '2', 'sys/Meun/project/reimburse', null, '报销监护', '1');
+INSERT INTO `sys_meun` VALUES ('9', '3', 'sys/Meun/comprehensive/require', null, '需求维护', '1');
 
 -- ----------------------------
 -- Table structure for sys_user

@@ -11,7 +11,7 @@ public class WebUrlMappingConst {
     }
 
     /**
-     * 用户登录、注册区域
+     * ①用户登录、注册区域
      * **/
     public static final String URL_USER = "/user/";
 
@@ -26,4 +26,13 @@ public class WebUrlMappingConst {
 
     //获取验证码
     public static final String URL_USER_GET_CODE = URL_USER + "getCode";
+
+
+    /**
+     *②菜单模块
+     */
+    public static final String URL_MEUN = "/meun/";
+
+    //获取所有菜单
+    public static final String URL_MEUN_GET_ALL_MEUNS = URL_MEUN + "get/meuns";
 }

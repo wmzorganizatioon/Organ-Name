@@ -1,8 +1,10 @@
 package com.example.demo.entity.meun;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class meun implements Serializable{
+public class Meun implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private String meunName;
@@ -14,6 +16,16 @@ public class meun implements Serializable{
     private String url;
 
     private String type;
+
+    private List<Meun> childMeuns = new ArrayList<Meun>();
+
+    public List<Meun> getChildMeuns() {
+        return childMeuns;
+    }
+
+    public void setChildMeuns(List<Meun> childMeuns) {
+        this.childMeuns = childMeuns;
+    }
 
     public String getMeunName() {
         return meunName;
@@ -57,7 +69,7 @@ public class meun implements Serializable{
 
     @Override
     public String toString() {
-        return "meun{" +
+        return "Meun{" +
                 "meunName='" + meunName + '\'' +
                 ", parentId='" + parentId + '\'' +
                 ", meunId=" + meunId +
