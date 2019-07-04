@@ -58,6 +58,9 @@
           };
 
           this.$post("/user/login",user,{timeout: 1000 * 60 * 2}).then(data =>{
+            if(data.success){
+              this.$router.push({path:"/meunPage"});
+            }
 
           }).catch(e => {
             console.log(e)

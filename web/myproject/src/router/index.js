@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import loginPage from '@/components/login/loginPage'
 
 Vue.use(Router);
@@ -16,9 +15,13 @@ export default new Router({
       name: 'registeredPage',
       component: () => import('@/components/login/registeredPage')
     },{
-      path:"forGetPassword",
+      path:"/forGetPassword",
       name:"forGetPassword",
       component:() => import('@/components/login/forGetPassword')
+    },{
+      path:"/meunPage",
+      name:"meunPage",
+      component:() => import('@/components/meun/meunPage')
     }
   ]
 })
