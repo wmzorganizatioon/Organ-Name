@@ -146,6 +146,8 @@ public class UserLoginController {
         //将验证码存入session里面
         session.setAttribute("imageCode",objects[0]);
 
+        session.setMaxInactiveInterval(3600);   //设置成30分钟
+
         //将图片输出给浏览器
         BufferedImage bufferedImage = (BufferedImage) objects[1];
         response.setContentType("image/jpeg");
