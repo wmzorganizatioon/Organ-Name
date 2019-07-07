@@ -1,6 +1,7 @@
 package com.example.demo.controller.meun;
 
 import com.example.demo.common.annotation.PostAnnotation;
+import com.example.demo.common.annotation.UserLoginToken;
 import com.example.demo.common.enums.WeekEnum;
 import com.example.demo.entity.meun.Meun;
 import com.example.demo.service.meun.MeunService;
@@ -45,6 +46,7 @@ public class GetMeunController {
      */
     @GetMapping(value = URL_MEUN_GET_ALL_MEUNS)
     @ResponseBody
+    //@UserLoginToken
     public JsonDomainArray getSelectAllMeuns(){
         logger.info("成功进入获取菜单接口");
 

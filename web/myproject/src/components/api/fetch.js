@@ -28,9 +28,9 @@ request.interceptors.request.use(
   config =>{
     console.log("是否走了拦截")
     // 增加判断，除登陆接口外，添加token； 此处判断需根据自身项目实际情况进行自定义
-    if(config.url.indexOf("/hello") != 0){
-      config.headers['HRSHTOKEN'] = sessionStorage.getItem('token')
-    }
+    //【只有在登陆的时候获取一次token，并保存起来传给后台】
+    var token = localStorage.getItem("token");
+    token?config.headers.Authorization=token:null;
     return config;
   },
   error => {

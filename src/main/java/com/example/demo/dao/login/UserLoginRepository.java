@@ -27,4 +27,13 @@ public interface UserLoginRepository {
      *return
      */
     List<User> queryAllUser();
+
+    /**
+     *@Author 86151
+     *@Date 2019/7/7 13:06
+     *Description 根据id查询
+     @Param
+     *return
+     */
+    User selectUserById(Long id);
 }

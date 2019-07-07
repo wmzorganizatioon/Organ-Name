@@ -21,4 +21,9 @@ public class UserLoginServiceImpl implements UserLoginService {
     public Integer insertUser(User user) {
         return userLoginRepository.addUser(user);
     }
+
+    @Override
+    public User selectUserById(Long id) {
+        return userLoginRepository.selectUserById(id);
+    }
 }

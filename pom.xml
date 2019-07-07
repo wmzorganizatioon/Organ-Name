@@ -24,6 +24,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--引进jwt来满足token的加密，实现首次登陆功能-->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+
 		<!--下载文件设置样式  主要引进CellStyle样式布局-->
 		<dependency>
 			<groupId>org.apache.poi</groupId>

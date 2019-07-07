@@ -59,6 +59,7 @@
 
           this.$post("/user/login",user,{timeout: 1000 * 60 * 2}).then(data =>{
             if(data.success){
+              localStorage.setItem("token",data.code);
               this.$router.push({path:"/meunPage"});
             }
 

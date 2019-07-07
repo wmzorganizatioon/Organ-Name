@@ -18,4 +18,6 @@ public interface UserLoginService {
      *return
      */
     Integer insertUser(User user);
+
+    User selectUserById(Long id);
 }

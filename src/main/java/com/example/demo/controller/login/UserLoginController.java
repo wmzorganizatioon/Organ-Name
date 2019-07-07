@@ -3,11 +3,13 @@ package com.example.demo.controller.login;
 import com.example.demo.common.annotation.BooleanAnnotation;
 import com.example.demo.common.annotation.GetAnnotation;
 import com.example.demo.common.annotation.PostAnnotation;
+import com.example.demo.common.annotation.UserLoginToken;
 import com.example.demo.common.enums.WeekEnum;
 import com.example.demo.entity.user.User;
 import com.example.demo.service.login.UserLoginService;
 import com.example.demo.utils.JsonResponseValue;
 import com.example.demo.utils.VerifyUtil;
+import com.example.demo.utils.token.LoginTicketToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,7 @@ public class UserLoginController {
 
         //HttpSession session=request.getSession();
 
+        //判断验证码的，暂时不写了 功能实现了
         if(session.getAttribute("imageCode") == null){
 
         }
@@ -53,8 +56,12 @@ public class UserLoginController {
         JsonResponseValue jsonResponseValue = new JsonResponseValue();
         if(user != null){
             if(userLoginService.SelectByUserNameCount(user) != 0){
+                LoginTicketToken loginTicketToken = new LoginTicketToken();
+                //user.setId((long) 1);
+                String token = loginTicketToken.addLoginToken(user);
                 logger.info("进入登陆成功了！");
-                jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
+                //jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
+                jsonResponseValue.setCode(token);
                 jsonResponseValue.setReason(WeekEnum.SSUCCESSENUM.getContent());
                 jsonResponseValue.setSuccess(WeekEnum.SSUCCESSENUM.isRest());
             }else {
