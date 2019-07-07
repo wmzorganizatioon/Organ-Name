@@ -19,6 +19,21 @@ Vue.prototype.$patch = patch;
 
 Vue.config.productionTip = false;
 
+//前台先自动判断，若无token直接跳到登陆
+router.beforeEach((to,from,next)=>{
+  if(to.path != "/"){
+    if(localStorage.getItem('token')){
+      next()
+    }else{
+      next({path:'/'})
+    }
+
+  }else{
+    next()
+  }
+
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
