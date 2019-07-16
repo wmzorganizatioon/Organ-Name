@@ -13,6 +13,8 @@ import com.example.demo.utils.token.LoginTicketToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +28,7 @@ import javax.servlet.http.HttpSession;
 
 import java.awt.image.BufferedImage;
 import java.io.OutputStream;
+import java.util.concurrent.TimeUnit;
 
 import static com.example.demo.utils.ConfigConstant.*;
 import static com.example.demo.utils.WebUrlMappingConst.*;
@@ -35,6 +38,10 @@ public class UserLoginController {
 
     @Autowired
     private UserLoginService userLoginService;
+
+    //引进redis的公用文件
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     //logback
     static final Logger logger = LoggerFactory.getLogger(UserLoginController.class);
@@ -46,6 +53,8 @@ public class UserLoginController {
     public JsonResponseValue userLogin(@RequestBody User user,HttpSession session){
         logger.info("进入登陆方法了！");
 
+        JsonResponseValue jsonResponseValue = new JsonResponseValue();
+
         //HttpSession session=request.getSession();
 
         //判断验证码的，暂时不写了 功能实现了
@@ -53,17 +62,39 @@ public class UserLoginController {
 
         }
 
-        JsonResponseValue jsonResponseValue = new JsonResponseValue();
+        String key = "usrId123";  //redis需要两个值key与value【这是我的key】
+
+        //引进redis的配置方法
+        ValueOperations<String,User> operations = redisTemplate.opsForValue();
+
+        try {
+            boolean hasKeys = redisTemplate.hasKey(key);
+
+            //redis的key存在的话就从缓存中取
+            if(hasKeys){       //【若是成功的话直接跳出；输出默认的“jsonResponseValue"】
+                User users = operations.get(key);
+                logger.info("==========从缓存中获得数据=========");
+                logger.info(users.getName());
+                logger.info("==============redis缓存获取成功啦！！！================");
+                return jsonResponseValue;
+            }
+        }catch (Exception e){
+            e.fillInStackTrace();
+        }
+
         if(user != null){
             if(userLoginService.SelectByUserNameCount(user) != 0){
                 LoginTicketToken loginTicketToken = new LoginTicketToken();
                 //user.setId((long) 1);
-                String token = loginTicketToken.addLoginToken(user);
+                String token = loginTicketToken.addLoginToken(user);   //
                 logger.info("进入登陆成功了！");
-                //jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
-                jsonResponseValue.setCode(token);
+                jsonResponseValue.setCode(WeekEnum.SSUCCESSENUM.getValue());
+                //jsonResponseValue.setCode(token);
                 jsonResponseValue.setReason(WeekEnum.SSUCCESSENUM.getContent());
                 jsonResponseValue.setSuccess(WeekEnum.SSUCCESSENUM.isRest());
+
+                //redis刚进来插入缓存
+                operations.set(key, user,5,TimeUnit.MINUTES);
             }else {
                 jsonResponseValue.setCode(DATA_FAIL_PRESENCE);
                 jsonResponseValue.setReason("账号不存在，请先注册！！！");

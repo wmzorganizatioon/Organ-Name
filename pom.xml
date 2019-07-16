@@ -24,6 +24,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--spring-boot配置redis-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
 		<!--引进jwt来满足token的加密，实现首次登陆功能-->
 		<dependency>
 			<groupId>com.auth0</groupId>
