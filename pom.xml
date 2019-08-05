@@ -30,6 +30,12 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+		<!--spring-boot + kafka(zookeeper)集成-->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
 		<!--引进jwt来满足token的加密，实现首次登陆功能-->
 		<dependency>
 			<groupId>com.auth0</groupId>

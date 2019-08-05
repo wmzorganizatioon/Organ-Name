@@ -36,6 +36,11 @@ spring:
         max-active: 8     #连接池最大连接数
         max-idle: 8    #连接池最大空闲时间
         min-idle: 0      #连接池最小连接时间
+  #kafka config
+  kafka:
+    bootstrap-servers: localhost:9092    #服务器地址
+    consumer:
+      group-id: mygroup
 mybatis:
   mapper-locations: classpath:mybatis/*/*.xml        #配置mybatis的.xml文件路径o
 logging:
@@ -43,4 +48,4 @@ logging:
   config: classpath:logback-springs.xml
   level:
     # root日志以WARN级别输出
-    root: debug                              #          trace<debug<info<warn<error      【级别越高日志打印越少】
+    root: info                              #          trace<debug<info<warn<error      【级别越高日志打印越少】
