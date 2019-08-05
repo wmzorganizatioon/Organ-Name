@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     username: root
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.214.1:3306/springboot?useUnicode=true&characterEncoding=utf8
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver        #以前的com.mysql.jdbc.Driver不维护了，这个是最新的（功能：只是为了让后台窗口更加干净）
     dbcp2:
@@ -14,7 +14,7 @@ spring:
   mail:
     host: smtp.163.com #邮箱服务器地址
     username: Wmz19960224@163.com #用户名
-    password: 84471386zhi #开启POP3之后设置的客户端授权码
+    password: 84471386zhi #开启POP3之后设置的客户端授权码e
     default-encoding: UTF-8
     # 超时时间（可选）
     properties:
