@@ -24,6 +24,18 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--添加kafka对logback.xml的依赖-->
+		<dependency>
+			<groupId>com.github.danielwegener</groupId>
+			<artifactId>logback-kafka-appender</artifactId>
+			<version>0.2.0-RC1</version>
+		</dependency>
+		<!--<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>4.11</version>
+		</dependency>-->
+
 		<!--spring-boot配置redis-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
