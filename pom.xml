@@ -24,6 +24,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--springboot + MongoDB-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
 		<!--添加kafka对logback.xml的依赖-->
 		<dependency>
 			<groupId>com.github.danielwegener</groupId>

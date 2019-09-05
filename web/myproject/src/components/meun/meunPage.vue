@@ -13,6 +13,10 @@
         <el-menu-item index="1" class="meunItem"><a href="https://www.ele.me" target="_blank"><i class="el-icon-circle-close-outline"></i>关闭</a></el-menu-item>
         <el-menu-item index="2" class="meunItem"><span>关于我们</span></el-menu-item>
         <el-menu-item index="3" class="meunItem"><a href="https://www.ele.me" target="_blank"><i class="el-icon-location-outline"></i>地理位置</a></el-menu-item>
+        <!--<el-menu-item index="4" class="meunItem"><span @click="addMongoDB()"><i class="el-icon-location-outline"></i>添加MongoDB</span></el-menu-item>
+        <el-menu-item index="5" class="meunItem"><span @click="deleteMongoDB()"><i class="el-icon-location-outline"></i>删除MongoDB</span></el-menu-item>
+        <el-menu-item index="5" class="meunItem"><span @click="updateMongoDB()"><i class="el-icon-location-outline"></i>修改MongoDB</span></el-menu-item>
+        <el-menu-item index="5" class="meunItem"><span @click="searchMongoDB()"><i class="el-icon-location-outline"></i>查询MongoDB</span></el-menu-item>-->
       </el-menu>
       <!--左树形菜单-->
       <el-tree
@@ -74,7 +78,52 @@
         //选择导航栏
         handleSelect(key, keyPath) {
           console.log(key, keyPath);
-        }
+        },
+
+        /***************************************************mongodb调用处************************************************/
+        //MongoDB数据添加
+        addMongoDB(){
+          const mongoDBEntity = {
+            mailNo:112,
+            mailType:"sddas"
+          };
+          this.$post("mongodbAdd",mongoDBEntity).then(data=>{
+            this.meunData = data.data;
+
+          })
+        },
+
+        deleteMongoDB(){
+          const id = 52;
+          this.$post("mongodbDelete",id).then(data=>{
+            this.meunData = data.data;
+
+          })
+        },
+
+        updateMongoDB(){
+          const mongoDBEntity = {
+            id:52,
+            mailType:"sddas苏大的所"
+          };
+          this.$post("mongodbModify",mongoDBEntity).then(data=>{
+            this.meunData = data.data;
+
+          })
+        },
+        searchMongoDB(){
+          const user = {
+            mongoDBEntity:"567",
+            currentPage:1,
+            pageSize:5,
+            sort:-1
+          };
+          this.$post("mongodbQuery",{mongoDBEntity:{mailNo:52},currentPage:1, pageSize:5,sort:-1}).then(data=>{
+            this.meunData = data.data;
+
+          })
+        },
+        /***************************************************mongodb调用处*********************结束************************************************/
 
       },
       watch:{

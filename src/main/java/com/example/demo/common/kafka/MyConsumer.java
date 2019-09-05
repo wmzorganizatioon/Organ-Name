@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  *@description kafka   消费者类
  *return
  */
-@Component
+/*@Component
 public class MyConsumer {
 
     static final Logger logger = LoggerFactory.getLogger(MyConsumer.class);
@@ -25,4 +25,4 @@ public class MyConsumer {
         logger.info(String.valueOf(consumerRecord));
 
     }
-}
+}*/
